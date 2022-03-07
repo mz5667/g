@@ -72,9 +72,10 @@ public abstract class GridPanel extends Panel{
 
 
         CoordinateSystem2i gridCS = new CoordinateSystem2i(
-                windowCS.getMin().x + padding + (cellWidth + padding) * gridX,
-                windowCS.getMin().y + padding + (cellHeight + padding) * gridY,
-                cellWidth * colspan, cellHeight * rowspan
+                padding + (cellWidth + padding) * gridX,
+                padding + (cellHeight + padding) * gridY,
+                cellWidth * colspan + padding * (colspan - 1),
+                cellHeight * rowspan + padding * (rowspan - 1)
         );
 
         // рисуем ячейку вместо всей панели
