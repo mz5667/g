@@ -70,8 +70,10 @@ public abstract class GridPanel extends Panel{
         if (cellWidth <= 0 || cellHeight <= 0)
             return;
 
+
         CoordinateSystem2i gridCS = new CoordinateSystem2i(
-                padding + (cellWidth + padding) * gridX, padding + (cellHeight + padding) * gridY,
+                windowCS.getMin().x + padding + (cellWidth + padding) * gridX,
+                windowCS.getMin().y + padding + (cellHeight + padding) * gridY,
                 cellWidth * colspan, cellHeight * rowspan
         );
 
