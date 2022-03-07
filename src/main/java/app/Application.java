@@ -47,10 +47,22 @@ public class Application implements Consumer<Event> {
      * Конструктор окна приложения
      */
     public Application() {
-
-
         // создаём окно
         window = App.makeWindow();
+
+        // создаём первый заголовок
+        label = new Label(window, true, PANEL_BACKGROUND_COLOR, PANEL_PADDING,
+                4, 4, 1, 1, 1, 1, "Привет, мир!", true, true);
+
+        // создаём второй заголовок
+        label2 = new Label(window, true, PANEL_BACKGROUND_COLOR, PANEL_PADDING,
+                4, 4, 0, 3, 1, 1, "Второй заголовок", true, true);
+
+        // создаём третий заголовок
+        label3 = new Label(window, true, PANEL_BACKGROUND_COLOR, PANEL_PADDING,
+                4, 4, 2, 0, 1, 1, "Это тоже заголовок", true, true);
+
+
         // задаём обработчиком событий текущий объект
         window.setEventListener(this);
         // задаём заголовок
@@ -65,18 +77,6 @@ public class Application implements Consumer<Event> {
             case WINDOWS -> window.setIcon(new File("src/main/resources/windows.ico"));
             case MACOS -> window.setIcon(new File("src/main/resources/macos.icns"));
         }
-
-        // создаём первый заголовок
-        label = new Label(window, true, PANEL_BACKGROUND_COLOR, PANEL_PADDING,
-                4, 4, 1, 1, 1, 1, "Привет, мир!", true, true);
-
-        // создаём второй заголовок
-        label2 = new Label(window, true, PANEL_BACKGROUND_COLOR, PANEL_PADDING,
-                4, 4, 0, 3, 1, 1, "Второй заголовок", true, true);
-
-        // создаём третий заголовок
-        label3 = new Label(window, true, PANEL_BACKGROUND_COLOR, PANEL_PADDING,
-                4, 4, 2, 0, 1, 1, "Это тоже заголовок", true, true);
 
         // названия слоёв, которые будем перебирать
         String[] layerNames = new String[]{
