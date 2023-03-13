@@ -1,5 +1,6 @@
 package panels;
 
+import io.github.humbleui.jwm.Event;
 import io.github.humbleui.jwm.Window;
 import io.github.humbleui.skija.Canvas;
 import misc.CoordinateSystem2i;
@@ -9,5 +10,8 @@ public class PanelLog {
     }
 
     public void paint(Canvas canvas, CoordinateSystem2i windowCS) {
+    }
+
+    public void accept(Event e) {
     }
 }
